@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>Title</title>
+    <style>
+
+        *{margin:0;padding:0;}
+
+        #img{width:1920px;height:1920px;position: relative;overflow:hidden;border-radius: 50%;}
+        #img img{width:1920px;display: block;}
+
+        #img div{position: absolute;width:180px;height:180px;z-index:100;}
+
+
+
+        #donghua
+        {
+            transform:perspective(1308px) rotateX(45deg) translate3d(0,-500px,320px);
+
+        }
+
+        #img{
+            transform: perspective(1508px)  rotateZ(0deg);
+           /* -webkit-animation:shunshizhen 30s linear 0s infinite;*/
+        }
+
+
+        @-webkit-keyframes shunshizhen
+        {
+            from {transform: perspective(1508px) rotateZ(0deg);}
+            to  {transform: perspective(1508px) rotateZ(360deg);}
+        }
+
+    </style>
+</head>
+<body style="overflow: hidden;">
+
+
+    <div id="donghua"  style="position: relative;width:1920px;height:1920px;margin:0 auto;background: #fff;overflow: hidden;border-radius: 50%;">
+    <div id="img" >
+
+
+        <div style="top:90px;left:875px;"></div>
+        <div style="top:130px;left:1103px;"></div>
+
+        <div style="top:230px;left:1333px;"></div>
+        <div style="top:415px;left:1493px;"></div>
+        <div style="top:630px;left:1603px;"></div>
+        <div style="top:860px;left:1653px;"></div>
+
+
+        <div style="top:1110px;left:1608px;"></div>
+        <div style="top:1320px;left:1493px;"></div>
+
+
+        <div style="top:1500px;left:1333px;"></div>
+        <div style="top:1608px;left:1113px;"></div>
+
+
+        <div style="top:1650px;left:870px;"></div>
+        <div style="top:1608px;left:623px;"></div>
+
+
+        <div style="top:1500px;left:415px;"></div>
+        <div style="top:1330px;left:233px;"></div>
+        <div style="top:1108px;left:123px;"></div>
+
+
+        <div style="top:868px;left:93px;"></div>
+        <div style="top:636px;left:123px;"></div>
+        <div style="top:408px;left:232px;"></div>
+
+        <div style="top:238px;left:412px;"></div>
+        <div style="top:128px;left:632px;"></div>
+
+
+        <img src="main.png"/>
+
+
+    </div>
+    </div>
+
+
+    <script src="lib/jquery.js"></script>
+    <script>
+
+
+        $("#img div").click(function()
+        {
+
+            console.log($(this).index());
+
+        });
+
+        var x_=0;
+        var x=0;
+
+
+        var perspective=1508;
+
+        var deg=0;
+        var lastCha=0;
+        var timer;
+        function timerInit()
+        {
+            timer=setInterval(function()
+            {
+                $("#img").css({"transform": "perspective("+perspective+"px) rotateZ("+deg+"deg)"});
+
+                if(lastCha>=0)
+                {
+                    deg=deg+0.1;
+                }
+                else
+                {
+                    deg=deg-0.1;
+                }
+
+            },10);
+        }
+
+        timerInit();
+
+
+        $(document).on("touchstart",function(e){
+
+            var _touch = e.originalEvent.targetTouches[0];
+            x_=_touch.pageX;
+
+            clearInterval(timer);
+
+
+        });
+
+        $(document).on("touchend",function(e){
+
+            timerInit();
+
+        });
+
+
+        $(document).on("touchmove",function(e){
+
+
+            var _touch = e.originalEvent.targetTouches[0];
+            x=_touch.pageX;
+
+            var cha=(x-x_)/100;
+            lastCha=cha;
+            deg=deg+cha;
+            $("#img").css({"transform": "perspective("+perspective+"px) rotateZ("+deg+"deg)"});
+
+
+
+        });
+
+
+    </script>
+
+</body>
+</html>
