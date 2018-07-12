@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<button onclick="send1();">左发送</button>
+<button onclick="send2();">右发送</button>
+
+<script src="/socket.io/socket.io.js"></script>
+
+
+
+<script>
+
+
+    $ = function(id){ return document.getElementById(id);}
+
+    var socket = io.connect('http://localhost:9001');
+
+    function send1(){
+
+        socket.emit('send', {id:1,name:'username1',news:'新闻1'});
+
+    }
+
+    function send2(){
+
+        socket.emit('send', {id:2,name:'username2',news:'新闻2'});
+
+    }
+
+</script>
+
+
+</body>
+</html>

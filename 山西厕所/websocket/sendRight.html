@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+right
+
+<div id="message" style="color:red;"></div>
+
+
+
+<script src="/socket.io/socket.io.js"></script>
+
+
+<script>
+
+
+    $ = function(id){ return document.getElementById(id);}
+
+    var socket = io.connect('http://localhost:9001');
+    /*socket.on('news', function (data) {
+
+        console.log(data);
+
+        /!*if( !$('name').value ){
+            alert('hey:用户名不能为空');
+            return false;
+        }*!/
+    });*/
+    socket.on('right',function( data ){
+
+        console.log(data);
+
+        var msg = $("message").innerHTML;
+        $("message").innerHTML  = '';
+        $("message").innerHTML += msg +data.name+':'+data.news;
+    });
+
+
+</script>
+
+
+</body>
+</html>
