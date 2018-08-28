@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/css/base.css"/>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+
+    <style>
+
+        .dianji{display: inline-block;width:24%;height:18%;border-radius: 50%;position: absolute;top:30%;right:14%;}
+        .shipin .img{width:80%;left:10%;position: absolute;}
+        .shipin div{width:100%;height:25%;position: relative;}
+        .shipin div .caozuo{position: absolute;width:60%;left:50%;margin-left:-30%;top:25%;}
+        .shipin div.active .bofang{display: block;}
+        .shipin div.active .zanting{display: none;}
+        .shipin div  .bofang{display: none;}
+        .shipin div  .zanting{display: block;}
+
+        .dianji1{display: inline-block;width:24%;height:18%;border-radius: 50%;position: absolute;top: 10%;left: 40%;}
+        .btn-list img{position: absolute;width:100%;left:0;top:0;}
+        .btn-list .img2{left:-2%;}
+        .btn-list .quyu1{top:5%;left:36%;}
+        .btn-list .quyu2{top:15%;left:47%;}
+        .btn-list .quyu3{top:24%;left:58%;}
+        .btn-list .quyu4{top:33%;left:69%;}
+        .btn-list .quyu5{top:43%;left:81%;}
+        .btn-list .img2{display: none;}
+        .btn-list div{position: absolute;width:13%;}
+        .btn-list div.active .img1{display: none;}
+        .btn-list div.active .img2{display: block;}
+        .zhanshi-img{width:47%;height:44.5%;position: absolute;left:24%;top:49%;display: none;}
+
+
+    </style>
+
+</head>
+<body>
+
+
+<img id="img" style="width:100%;display: block;" src="../assets/img/三级/阳光新未来/素材/阳光新未来背景.png"/>
+
+
+<div class="btn-list">
+
+    <div class="quyu1" data-name="炭黑">
+    <img class="img1" src="../assets/img/三级/阳光新未来/素材/炭新材料/炭黑.png"/>
+        <img class="img2" src="../assets/img/三级/阳光新未来/素材/炭新材料/炭黑-亮光.png"/>
+    </div>
+
+    <div class="quyu2" data-name="改质沥青">
+    <img class="img1" src="../assets/img/三级/阳光新未来/素材/炭新材料/改质沥青.png"/>
+        <img class="img2" src="../assets/img/三级/阳光新未来/素材/炭新材料/改质沥青-亮光.png"/>
+    </div>
+
+    <div class="quyu3" data-name="炭微球">
+    <img class="img1" src="../assets/img/三级/阳光新未来/素材/炭新材料/炭微球.png"/>
+        <img class="img2" src="../assets/img/三级/阳光新未来/素材/炭新材料/炭微球-亮光.png"/>
+    </div>
+
+    <div class="quyu4" data-name="针状焦">
+        <img class="img1" src="../assets/img/三级/阳光新未来/素材/炭新材料/针状焦.png"/>
+        <img class="img2" src="../assets/img/三级/阳光新未来/素材/炭新材料/针状焦-亮光.png"/>
+    </div>
+
+    <div class="quyu5" data-name="超微纤维">
+        <img class="img1" src="../assets/img/三级/阳光新未来/素材/炭新材料/超微纤维.png"/>
+        <img class="img2" src="../assets/img/三级/阳光新未来/素材/炭新材料/超微纤维-亮光.png"/>
+    </div>
+
+
+
+</div>
+
+
+<img class="zhanshi-img" src="">
+
+
+<div class="back-left"></div>
+
+<script src="../lib/jquery.js"></script>
+<script src="../script/common.js"></script>
+<script>
+
+    $(".back-left").click(function()
+    {
+        api.closeWin({
+        });
+    });
+
+    $(".btn-list div").click(function()
+    {
+        $(".btn-list div").removeClass("active");
+        $(this).addClass("active");
+
+        $(".zhanshi-img").show();
+        $(".zhanshi-img").attr("src","../assets/img/三级/阳光新未来/素材/炭新材料/img/"+$(this).attr("data-name")+".png");
+
+    });
+
+
+
+
+
+</script>
+
+</body>
+</html>

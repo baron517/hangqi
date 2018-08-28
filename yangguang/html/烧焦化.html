@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="stylesheet" href="../assets/css/base.css"/>
+    <link rel="stylesheet" href="../assets/css/main.css"/>
+
+    <style>
+
+        .dianji{display: inline-block;width:24%;height:18%;border-radius: 50%;position: absolute;top:30%;right:14%;}
+        .shipin .img{width:80%;left:10%;position: absolute;}
+        .shipin div{width:100%;height:25%;position: relative;}
+        .shipin div .caozuo{position: absolute;width:60%;left:50%;margin-left:-30%;top:25%;}
+        .shipin div.active .bofang{display: block;}
+        .shipin div.active .zanting{display: none;}
+        .shipin div  .bofang{display: none;}
+        .shipin div  .zanting{display: block;}
+
+        .dianji1{display: inline-block;width:24%;height:18%;border-radius: 50%;position: absolute;top: 10%;left: 40%;}
+        .btn-list img{position: absolute;width:100%;left:0;top:0;}
+        .btn-list .img2{left:-2%;}
+        .btn-list .quyu1{top:9%;left:43%;}
+        .btn-list .quyu2{top:23%;left:59%;}
+        .btn-list .quyu3{top:38%;left:76%;}
+        .btn-list .img2{display: none;}
+        .btn-list div{position: absolute;width:13.8%;}
+        .btn-list div.active .img1{display: none;}
+        .btn-list div.active .img2{display: block;}
+        .zhanshi-img{width:47%;height:44.5%;position: absolute;left:24%;top:49%;display: none;}
+
+
+    </style>
+
+</head>
+<body>
+
+
+<img id="img" style="width:100%;display: block;" src="../assets/img/三级/阳光新未来/素材/阳光新未来背景.png"/>
+
+
+<div class="btn-list">
+
+    <div class="quyu1" data-name="焦炭">
+    <img class="img1" src="../assets/img/三级/阳光优传统/素材/煤焦化/焦炭.png"/>
+        <img class="img2" src="../assets/img/三级/阳光优传统/素材/煤焦化/焦炭-亮光.png"/>
+    </div>
+
+    <div class="quyu2" data-name="煤焦化产品">
+    <img class="img1" src="../assets/img/三级/阳光优传统/素材/煤焦化/煤焦化产品.png"/>
+        <img class="img2" src="../assets/img/三级/阳光优传统/素材/煤焦化/煤焦化产品-亮光.png"/>
+    </div>
+
+    <div class="quyu3" data-name="焦炉煤气">
+    <img class="img1" src="../assets/img/三级/阳光优传统/素材/煤焦化/焦炉煤气.png"/>
+        <img class="img2" src="../assets/img/三级/阳光优传统/素材/煤焦化/焦炉煤气-亮光.png"/>
+    </div>
+
+
+</div>
+
+
+<img class="zhanshi-img" src="">
+
+
+<div class="back-left"></div>
+
+<script src="../lib/jquery.js"></script>
+<script src="../script/common.js"></script>
+<script>
+
+    $(".back-left").click(function()
+    {
+        api.closeWin({
+        });
+    });
+
+    $(".btn-list div").click(function()
+    {
+        $(".btn-list div").removeClass("active");
+        $(this).addClass("active");
+
+        $(".zhanshi-img").show();
+        $(".zhanshi-img").attr("src","../assets/img/三级/阳光优传统/素材/煤焦化/img/"+$(this).attr("data-name")+".png");
+
+    });
+
+
+
+
+
+</script>
+
+</body>
+</html>

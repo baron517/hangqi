@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="stylesheet" href="assets/css/base.css"/>
+    <link rel="stylesheet" href="assets/css/main.css"/>
+
+    <style>
+
+        .dianji span{display: inline-block;width:24%;height:18%;border-radius: 50%;position: absolute;}
+
+    </style>
+
+</head>
+<body>
+
+
+    <img id="img" style="width:100%;display: block;" src="assets/img/首页/首页%20拷贝.png"/>
+
+    <div class="dianji">
+
+        <span class="dianji1" style="left:14%;top:35%;"></span>
+        <span class="dianji2" style="left:42%;top:50%;"></span>
+        <span class="dianji3" style="left: 71%;top: 65%;"></span>
+
+    </div>
+
+    <script src="lib/jquery.js"></script>
+    <script src="script/common.js"></script>
+    <script>
+
+
+
+        $(".dianji1").click(function()
+        {
+
+            api.openWin({
+                name: "yangguang",
+                url: '阳光掠影.html',
+                bounces: false,
+                allowEdit:true,
+                slidBackEnabled: false,
+                vScrollBarEnabled: false,
+                progress: {
+                    type: "page"
+                }
+            });
+
+        });
+
+        $(".dianji2").click(function()
+        {
+
+            api.openWin({
+                name: "qianchui",
+                url: '千锤百炼.html',
+                bounces: false,
+                allowEdit:true,
+                slidBackEnabled: false,
+                vScrollBarEnabled: false,
+                progress: {
+                    type: "page"
+                }
+            });
+
+        });
+
+
+        $(".dianji3").click(function()
+        {
+
+            api.openWin({
+                name: "hongtu",
+                url: '宏图伟业.html',
+                bounces: false,
+                allowEdit:true,
+                slidBackEnabled: false,
+                vScrollBarEnabled: false,
+                progress: {
+                    type: "page"
+                }
+            });
+
+        });
+
+
+
+
+    </script>
+
+</body>
+</html>
